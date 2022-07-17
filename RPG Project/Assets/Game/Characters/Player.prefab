@@ -12,9 +12,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5815800058550733882, guid: ef2a4f86b99ebf24fb772e35cdbae328, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5815800058550733886, guid: ef2a4f86b99ebf24fb772e35cdbae328, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5815800058550733886, guid: ef2a4f86b99ebf24fb772e35cdbae328, type: 3}
       propertyPath: m_LocalPosition.x

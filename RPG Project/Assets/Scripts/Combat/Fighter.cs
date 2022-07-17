@@ -10,7 +10,7 @@ namespace RPG.Combat
         Health target;
         ActionScheduler actionScheduler;
         Animator animator;
-        float timeSinceLastAttack = 0f;
+        float timeSinceLastAttack = Mathf.Infinity;
 
         [SerializeField] float weaponRange = 2f;
         [SerializeField] float timeBetweenAttacks = 1f;
@@ -46,7 +46,15 @@ namespace RPG.Combat
             return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
         }
 
-        public void Attack(CombatTarget combatTarget)
+        public bool CanAttack(GameObject combatTarget)
+        {
+            if (combatTarget == null) { return false; }
+
+            Health targetToTest = combatTarget.GetComponent<Health>();
+            return targetToTest != null && !targetToTest.IsDead();
+        }
+
+        public void Attack(GameObject combatTarget)
         {
             actionScheduler.StartAction(this);
             target = combatTarget.GetComponent<Health>();
@@ -85,14 +93,6 @@ namespace RPG.Combat
         {
             animator.ResetTrigger("stopAttack");
             animator.SetTrigger("attack");
-        }
-
-        public bool CanAttack(CombatTarget combatTarget)
-        {
-            if (combatTarget == null) { return false; }
-
-            Health targetToTest = combatTarget.GetComponent<Health>();
-            return targetToTest != null && !targetToTest.IsDead();
         }
     }
 }
