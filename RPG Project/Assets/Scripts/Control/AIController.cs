@@ -16,6 +16,9 @@ namespace RPG.Control
         [SerializeField] float wayPointTolerance = 1f;
         [SerializeField] float waypointDwellTime = 3f;
 
+        [Range(0,1)]
+        [SerializeField] float patrolSpeedFraction = 0.2f;
+
         int currentWaypointIndex = 0;
 
         Fighter fighter;
@@ -80,7 +83,7 @@ namespace RPG.Control
                 }
                 nextPosition = GetCurrentWaypoint();
             }
-            mover.StartMoveAction(nextPosition);
+            mover.StartMoveAction(nextPosition, patrolSpeedFraction);
         }
 
         private Vector3 GetCurrentWaypoint()
