@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5815800058550733886, guid: ef2a4f86b99ebf24fb772e35cdbae328, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5815800058550733886, guid: ef2a4f86b99ebf24fb772e35cdbae328, type: 3}
       propertyPath: m_LocalPosition.x
@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6818630250881119560, guid: ef2a4f86b99ebf24fb772e35cdbae328, type: 3}
+      propertyPath: uniqueIdentifier
+      value: player
+      objectReference: {fileID: 0}
     - target: {fileID: 8550596378709490527, guid: ef2a4f86b99ebf24fb772e35cdbae328, type: 3}
       propertyPath: weaponDamage
       value: 10
@@ -84,18 +88,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5815800058550733882, guid: ef2a4f86b99ebf24fb772e35cdbae328, type: 3}
   m_PrefabInstance: {fileID: 1595083112870069828}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-3715136286335266108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5086535357064055422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05e9f56a1a73da74a95c29f044188466, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &127183360158084133
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -110,6 +102,18 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-3715136286335266108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5086535357064055422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e9f56a1a73da74a95c29f044188466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6889476826884609405
 PrefabInstance:
   m_ObjectHideFlags: 0
