@@ -12,6 +12,18 @@ PrefabInstance:
       propertyPath: healthPoints
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 3228304454521831932, guid: ef2a4f86b99ebf24fb772e35cdbae328, type: 3}
+      propertyPath: characterClass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228304454521831932, guid: ef2a4f86b99ebf24fb772e35cdbae328, type: 3}
+      propertyPath: shouldUseModifiers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228304454521831932, guid: ef2a4f86b99ebf24fb772e35cdbae328, type: 3}
+      propertyPath: levelUpParticleEffect
+      value: 
+      objectReference: {fileID: 4152032916030806272, guid: eeb55523c7b197740a02304c9f289e54, type: 3}
     - target: {fileID: 5815800058550733882, guid: ef2a4f86b99ebf24fb772e35cdbae328, type: 3}
       propertyPath: m_Name
       value: Player
@@ -22,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5815800058550733886, guid: ef2a4f86b99ebf24fb772e35cdbae328, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5815800058550733886, guid: ef2a4f86b99ebf24fb772e35cdbae328, type: 3}
       propertyPath: m_LocalPosition.x
@@ -114,6 +126,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e9f56a1a73da74a95c29f044188466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7070735784461234971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5086535357064055422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a992ba7080010674bb55642ca239a1ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  experiencePoints: 0
 --- !u!1001 &6889476826884609405
 PrefabInstance:
   m_ObjectHideFlags: 0

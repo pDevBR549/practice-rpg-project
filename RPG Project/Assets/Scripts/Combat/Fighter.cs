@@ -1,26 +1,33 @@
 using UnityEngine;
 using RPG.Movement;
 using RPG.Core;
+using RPG.Attributes;
+using RPG.Stats;
+using System.Collections.Generic;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour, IAction
+    public class Fighter : MonoBehaviour, IAction, IModifierProvider
     {
         Mover mover;
         Health target;
         ActionScheduler actionScheduler;
+        BaseStats baseStats;
+        
         Animator animator;
         float timeSinceLastAttack = Mathf.Infinity;
 
         [SerializeField] float weaponRange = 2f;
         [SerializeField] float timeBetweenAttacks = 1f;
-        [SerializeField] float weaponDamage = 5f;
+        //[SerializeField] float weaponDamage = 5f;
+        [SerializeField] Weapon currentWeapon;
 
-        private void Start()
+        private void Awake()
         {
             mover = GetComponent<Mover>();
             actionScheduler = GetComponent<ActionScheduler>();
             animator = GetComponent<Animator>();
+            baseStats = GetComponent<BaseStats>();
         }
 
         private void Update()
@@ -77,7 +84,8 @@ namespace RPG.Combat
         void Hit()
         {
             if (target == null) { return; }
-            target.TakeDamage(weaponDamage);
+            float damage = baseStats.GetStat(Stat.Damage);
+            target.TakeDamage(gameObject, damage);
         }
 
         private void AttackBehaviour()
@@ -94,6 +102,27 @@ namespace RPG.Combat
         {
             animator.ResetTrigger("stopAttack");
             animator.SetTrigger("attack");
+        }
+
+        public Health GetTarget()
+        {
+            return target;
+        }
+
+        public IEnumerable<float> GetAdditiveModifiers(Stat stat)
+        {
+            if (stat == Stat.Damage)
+            {
+                yield return currentWeapon.Damage;
+            }
+        }
+
+        public IEnumerable<float> GetPercentageModifiers(Stat stat)
+        {
+            if (stat == Stat.Damage)
+            {
+                yield return currentWeapon.PercentageBonus;
+            }
         }
     }
 }

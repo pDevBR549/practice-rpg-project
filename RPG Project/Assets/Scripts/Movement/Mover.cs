@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using RPG.Core;
 using RPG.Saving;
+using RPG.Attributes;
 using System.Collections.Generic;
 
 namespace RPG.Movement
@@ -17,7 +18,7 @@ namespace RPG.Movement
         private ActionScheduler actionScheduler;
         private Health health;
 
-        void Start()
+        void Awake()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
             animator = GetComponent<Animator>();
